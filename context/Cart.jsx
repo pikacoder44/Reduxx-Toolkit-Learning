@@ -1,8 +1,9 @@
+"use client";
 import { createContext, useState } from "react";
 
-let CartContext = createContext(null);
-const [items, setItems] = useState([]);
+export const CartContext = createContext(null);
 export const CartProvider = (props) => {
+  const [items, setItems] = useState([]);
   return (
     <CartContext.Provider value={{ items, setItems }}>
       {props.children}
