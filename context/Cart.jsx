@@ -1,5 +1,11 @@
 "use client";
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
+
+// Custom Hook to simplify this:
+export const useCart = () => {
+  const cart = useContext(CartContext);
+  return cart;
+};
 
 export const CartContext = createContext(null);
 export const CartProvider = (props) => {

@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { CartContext } from "@/context/Cart";
+import React from "react";
+import { useCart } from "@/context/Cart";
 const Item = (props) => {
-  const cart = useContext(CartContext);
+  const cart = useCart();
   console.log("Cart: ", cart);
   return (
     <div className="bg-zinc-700 hover:bg-zinc-400 hover:text-black p-6 rounded-2xl flex flex-col items-center justify-center gap-2 transition-all ease-in-out cursor-pointer hover:scale-105">

@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { ShoppingCart } from "lucide-react";
-import { CartContext } from "@/context/Cart";
+import { useCart } from "@/context/Cart";
 const Cart = () => {
-  const cart = useContext(CartContext);
+  const cart = useCart();
   const total = cart.items.reduce((a, b) => a + b.price, 0);
   console.log("cart: ", cart);
   return (
@@ -15,12 +15,12 @@ const Cart = () => {
         <p>Item Name - Price</p>
       </div>
       {cart &&
-        cart.items.map((item) => (
+        cart.items.map((item,index) => (
           <li
             className="list-none hover:bg-zinc-400 hover:text-black px-2 py-1 rounded-lg transition-all ease-out"
-            key={item.id}
+            key={index}
           >
-            {item.name} - ${item.price}
+            {item.name} --- ${item.price}
           </li>
         ))}
       <div className="bg-green-700 text-black mt-3 w-full py-1 px-2 flex justify-center items-center cursor-pointer rounded-md hover:scale-105 hover:bg-green-400 hover:font-bold transition-all delay-75 ease-in-out">
