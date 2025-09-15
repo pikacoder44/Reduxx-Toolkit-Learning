@@ -17,13 +17,13 @@ const Cart = () => {
       {cart &&
         cart.items.map((item) => (
           <li
-            className="list-none hover:bg-zinc-400 hover:text-black px-2 py-1 rounded-lg transition-all delay-75 ease-in-out"
+            className="list-none hover:bg-zinc-400 hover:text-black px-2 py-1 rounded-lg transition-all ease-out"
             key={item.id}
           >
             {item.name} - ${item.price}
           </li>
         ))}
-      <div className="bg-green-700 text-black mt-3 w-full py-1 px-2 flex justify-center items-center rounded-md">
+      <div className="bg-green-700 text-black mt-3 w-full py-1 px-2 flex justify-center items-center cursor-pointer rounded-md hover:scale-105 hover:bg-green-400 hover:font-bold transition-all delay-75 ease-in-out">
         <h5>Total: ${total}</h5>
       </div>
     </div>
