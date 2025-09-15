@@ -4,7 +4,7 @@ const Item = (props) => {
   const cart = useContext(CartContext);
   console.log("Cart: ", cart);
   return (
-    <div className="bg-zinc-700 hover:bg-blue-400 hover:text-black p-6 rounded-2xl flex flex-col items-center justify-center gap-2 transition-all ease-in-out cursor-pointer hover:scale-105">
+    <div className="bg-zinc-700 hover:bg-zinc-400 hover:text-black p-6 rounded-2xl flex flex-col items-center justify-center gap-2 transition-all ease-in-out cursor-pointer hover:scale-105">
       <h4 className="text-3xl">{props.name}</h4>
       <p className="text-xl">Price: ${props.price}</p>
       <button
