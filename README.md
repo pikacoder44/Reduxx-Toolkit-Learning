@@ -3,6 +3,6 @@
 ## Description
 
 ```bash
-npm run dev
+Just wanted to practice and learn the working of Context Api and Redux toolkit
 
 ```
