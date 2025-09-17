@@ -1,8 +1,6 @@
 # Context Api and Redux Toolkit Practice
 
-## Getting Started
-
-First, run the development server:
+## Description
 
 ```bash
 npm run dev
