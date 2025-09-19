@@ -15,9 +15,13 @@ export const todoSlice = createSlice({
     addTodo: (state, action) => {
       const todo = {
         id: nanoid(),
-        text: "Hello world",
+        text: action.payload,
       };
+      state.todos.push(todo);
+
     },
-    removeTodo: () => {},
+    removeTodo: (state, action) => {
+      
+    },
   },
 });
