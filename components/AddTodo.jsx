@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../features/todo/todoSlice";
@@ -7,7 +8,7 @@ const AddTodo = () => {
   const addTodoHandler = (e) => {
     e.preventDefault();
     dispatch(addTodo(input));
-    setInput("")
+    setInput("");
   };
   return (
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
