@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeTodo } from "../features/todo/todoSlice";
+import { removeTodo, toggleEditMode } from "../features/todo/todoSlice";
 
 const Todo = () => {
   const todos = useSelector((state) => state.todos);
+  const editMode = useSelector((state) => state.editMode);
   const dispatch = useDispatch();
   return (
     <>
@@ -16,6 +17,28 @@ const Todo = () => {
             key={todo.id}
           >
             <div className="text-white">{todo.text}</div>
+            <button
+              onClick={() => dispatch(toggleEditMode())}
+              className="text-white bg-blue-500 border-0 py-1 px-4 ml-2 focus:outline-none hover:bg-red-600 rounded text-md"
+            >
+              <svg
+                className="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"
+                />
+              </svg>
+            </button>
             <button
               onClick={() => dispatch(removeTodo(todo.id))}
               className="text-white bg-red-500 border-0 py-1 px-4 ml-2 focus:outline-none hover:bg-red-600 rounded text-md"
