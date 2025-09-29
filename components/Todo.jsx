@@ -1,12 +1,11 @@
-"use client"
+"use client";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeTodo } from "../features/todo/todoSlice";
 
-const todos = useSelector((state) => state.todos);
-const dispatch = useDispatch();
-
 const Todo = () => {
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
   return (
     <>
       <div>Todos</div>
