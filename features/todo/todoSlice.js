@@ -29,11 +29,13 @@ export const todoSlice = createSlice({
       state.currentTodo = action.payload;
     },
     updateTodo: (state, action) => {
-      const selectedTodo = state.todos.find(
-        (todo) => todo.id === action.payload
-      );
-      console.log(action.payload);
-      console.log(selectedTodo?.text);
+      const { id, text } = action.payload;
+      const todo = state.todos.find((t) => t.id === id);
+      if (todo) {
+        todo.text = text;
+      }
+      state.editMode = false;
+      state.currentTodo = null;
     },
   },
 });

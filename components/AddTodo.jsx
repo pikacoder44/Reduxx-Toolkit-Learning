@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../features/todo/todoSlice";
-import { current } from "@reduxjs/toolkit";
+import { addTodo, updateTodo } from "../features/todo/todoSlice";
+
 const AddTodo = () => {
   const editMode = useSelector((state) => state.editMode);
   const currentTodo = useSelector((state) => state.currentTodo);
@@ -21,8 +21,10 @@ const AddTodo = () => {
       setInput("");
     }
   }, [editMode, currentTodo]);
-  const updateTodoHandler = () => {
+  const updateTodoHandler = (e) => {
+    e.preventDefault();
     console.log("Updating");
+    dispatch(updateTodo({ id: currentTodo.id, text: input }));
   };
   return (
     <>
