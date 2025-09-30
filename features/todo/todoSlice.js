@@ -25,6 +25,9 @@ export const todoSlice = createSlice({
       state.editMode = !state.editMode;
       state.currentTodo = todo || null;
     },
+    setcurrentTodo: (state, action) => {
+      state.currentTodo = action.payload;
+    },
     updateTodo: (state, action) => {
       const selectedTodo = state.todos.find(
         (todo) => todo.id === action.payload
@@ -35,7 +38,12 @@ export const todoSlice = createSlice({
   },
 });
 
-export const { addTodo, removeTodo, toggleEditMode, updateTodo } =
-  todoSlice.actions;
+export const {
+  addTodo,
+  removeTodo,
+  toggleEditMode,
+  setcurrentTodo,
+  updateTodo,
+} = todoSlice.actions;
 
 export default todoSlice.reducer;
